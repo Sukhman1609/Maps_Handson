@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><h1>**MAPS AND SETS HANDSON**</h1>
+    <h2><pre>Q1."Problem:
+        You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+        Your task is to remove all the duplicate occurrences of characters in the string.
+        
+        Input:
+        abcadeecfb
+        
+        Output:
+        abcdef"</pre></h2>
+    <h3><pre>function removeDuplicates(str) {
+        var unique = "";
+        for (var i = 0; i < str.length; i++) {
+          if (unique.indexOf(str[i]) === -1) {
+            unique += str[i];
+          }
+        }
+        return unique;
+      }
+      
+      var input = "abcadeecfb";
+      var output = removeDuplicates(input);
+      console.log(output); // Output: "abcdef"</pre></h3>
+      <hr>
+      <hr>
+      <h2><pre>Q2."Problem:
+        You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+        
+        Input:
+        abcadeecfb
+        
+        Output:
+        a=2
+        b=2
+        c=2
+        d=1
+        e=2
+        f=1"</pre></h2>
+        <h3><pre>function countAlphabets(str) {
+            var charCount = {};
+          
+            // Count occurrences of each alphabet
+            for (var i = 0; i < str.length; i++) {
+              var char = str[i];
+              if (charCount[char]) {
+                charCount[char]++;
+              } else {
+                charCount[char] = 1;
+              }
+            }
+          
+            // Print the counts
+            for (var char in charCount) {
+              console.log(char + "=" + charCount[char]);
+            }
+          }
+
+          var input = "abcadeecfb";
+          countAlphabets(input);</pre></h3>
+
+    <script src="script.js"></script>
+</body>
+</html>
